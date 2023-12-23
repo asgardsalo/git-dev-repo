@@ -1,0 +1,45 @@
+pipeline {
+    agent any
+    
+    parameters {
+        string(name: 'REGION', defaultValue: 'us-east-1', description: 'AWS Region (us-east-1 or us-east-2)')
+        string(name: 'VPC', defaultValue: 'non-prod', description: 'VPC name (non-prod or prod)')
+        string(name: 'INSTANCE_ID', defaultValue: '', description: 'Instance ID (Leave blank to create a new instance)')
+        string(name: 'ACTION', defaultValue: 'create', description: 'Action (create, start, or stop)')
+    }
+
+    stages {
+        stage('Manage AWS Instance') {
+            steps {
+                script {
+                    def awsRegion = "${params.REGION}"
+                    def vpcName = "${params.VPC}"
+                    def instanceId = "${params.INSTANCE_ID}"
+                    def action = "${params.ACTION}"
+                    
+                    def awsCliCmd = "aws ec2 --region ${awsRegion}"
+
+                    if (action == 'create' && instanceId == '') {
+                        // Create a new instance
+                        sh "${awsCliCmd} run-instances --image-id ami-xxxxxxxxxxxx --instance-type t2.micro --key-name YOUR_KEY_NAME --subnet-id YOUR_SUBNET_ID --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=MyInstance}]'"
+                    } else {
+                        // Check if the instance exists
+                        def instanceState = sh(script: "${awsCliCmd} describe-instances --instance-ids ${instanceId} --query 'Reservations[*].Instances[*].State.Name' --output text", returnStdout: true).trim()
+
+                        if (instanceState == 'running' && action == 'start') {
+                            echo "Instance is already running."
+                        } else if (instanceState == 'stopped' && action == 'start') {
+                            sh "${awsCliCmd} start-instances --instance-ids ${instanceId}"
+                        } else if (instanceState == 'stopped' && action == 'stop') {
+                            echo "Instance is already stopped."
+                        } else if (instanceState == 'running' && action == 'stop') {
+                            sh "${awsCliCmd} stop-instances --instance-ids ${instanceId}"
+                        } else {
+                            echo "Instance not found or action not recognized."
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
