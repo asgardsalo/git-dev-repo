@@ -1,7 +1,5 @@
 #!groovy
 
-//import com.equifax.utils.Gcloud
-
 def pod_acct
 def impersonacct
 def message
