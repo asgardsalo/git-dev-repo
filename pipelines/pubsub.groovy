@@ -12,9 +12,6 @@ pipeline {
         choice (name: 'region', choices: ['US', 'CA', 'AU', 'UK', 'IN', 'LA', 'EU' ], description: 'Select the GCP Region where to perform the task ')
     }
     
-//    stage ('Init Pubsub') {
-//        pubsub
-//    }
 stages {
         stage("Choose Service Account / Pod Template ") {
             steps {
