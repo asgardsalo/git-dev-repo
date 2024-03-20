@@ -8,6 +8,13 @@ RUN yum update -y && \
         vim \
         net-tools \
         curl \
+        httpd \
+        mod_ssl \
+        postfix \
+        cyrus-sasl \
+        cyrus-sasl-plain \
+        cyrus-sasl-md5 \
+        mailx
         sudo \
         && \
     yum clean all
