@@ -15,8 +15,6 @@ RUN yum update -y && \
         cyrus-sasl-plain \
         cyrus-sasl-md5 \
         mailx
-        sudo \
-        && \
     yum clean all
 
 # Optional: Set up additional configurations if needed
