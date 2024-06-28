@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         AWS_DEFAULT_REGION = 'us-east-1' // Specify your AWS region
-        SNS_TOPIC_ARN = 'arn:aws:sns:us-east-1:867787544211:instance_age' // Replace with your SNS topic ARN
+        SNS_TOPIC_ARN = 'arn:aws:sns:us-east-1:867787544211:instance-age' // Replace with your SNS topic ARN
         INSTANCE_AGE_THRESHOLD = 30 // Threshold in days
     }
 
