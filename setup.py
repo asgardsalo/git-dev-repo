@@ -28,4 +28,4 @@ setup(name='salotemplatecicdlib',
       scripts=[
           'scripts/cicd'
       ],
-      )
+    )
