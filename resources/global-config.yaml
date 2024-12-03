@@ -1,2 +1,8 @@
 ---
 #This is going to be edited later
+
+credentials: 
+global: 
+    url: "https://github.com/asgardsalo/git-dev-repo.git"
+    auth_url: "https://#Usr:#Paswd@github.com/asgardsalo/git-dev-repo"
+    name: "git-dev-repo"
