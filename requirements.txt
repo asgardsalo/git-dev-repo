@@ -1,7 +1,7 @@
 requests
 pytz
 python-dateutil
-pythoin-jenkins
+python-jenkins
 pyinstaller
 scons
 wheel
