@@ -1,0 +1,7 @@
+requests
+pytz
+python-dateutil
+python-jenkins
+pyinstaller
+scons
+wheel
