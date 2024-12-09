@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    stages {
+        stage('AWS-validation') {
+            steps {
+                sh '''
+                whoami
+                sudo -S bash
+                curl https://api.github.com/repos/asgardsalo/git-dev-repo
+                '''
+            }
+        }
+    }
+}
