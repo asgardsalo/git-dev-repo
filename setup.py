@@ -13,8 +13,8 @@ pipeline {
                 python3 -m venv $PYTHON_VENV
                 $PYTHON_VENV/bin/python -V
                 '''
+                echo "${WORKSPACE}/venv"
             }
-            print ("${WORKSPACE}/venv")
         }
     }
 }
