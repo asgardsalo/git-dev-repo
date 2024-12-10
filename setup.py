@@ -1,5 +1,3 @@
-#!groovy
-
 pipeline {
     agent any
     environment {
@@ -13,7 +11,7 @@ pipeline {
                 python3 -m venv $PYTHON_VENV
                 $PYTHON_VENV/bin/python -V
                 '''
-                echo "${WORKSPACE}/venv"
+                echo "Virtual environment path: ${WORKSPACE}/venv"
             }
         }
     }
