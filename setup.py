@@ -1,14 +1,16 @@
 pipeline {
     agent any
+    environment {
+        PYTHON_VENV = "${WORKSPACE}/venv"
+    }
     stages {
         stage('Setup Environment') {
             steps {
                 echo "Setting up Python virtual environment"
                 sh '''
                 python3 -m venv $PYTHON_VENV
-                source $PYTHON_VENV/bin/activate
-                pip install -r requirements.txt
-                python -V
+                $PYTHON_VENV/bin/pip install -r requirements.txt
+                $PYTHON_VENV/bin/python -V
                 '''
             }
         }
