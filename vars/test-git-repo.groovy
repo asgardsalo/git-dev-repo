@@ -1,4 +1,6 @@
 #!groovy
+@Library ('git-repo@jenkins-git-repo') _
+
 pipeline {
     agent any
     stages {
