@@ -1,8 +1,12 @@
 pipeline {
     agent any
+
     environment {
         PYTHON_VENV = "${WORKSPACE}/venv"
     }
+    echo "${WORKSPACE}/venv"
+    echo "whoami"
+    
     stages {
         stage('Setup Environment and Validate Python Version') {
             steps {
