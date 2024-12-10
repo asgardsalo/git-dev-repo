@@ -11,4 +11,12 @@ pipeline {
             }
         }
     }
+    post {
+        failure {
+            echo "Error"
+        }
+        always {
+            cleanWs()
+        }
+    }
 }
