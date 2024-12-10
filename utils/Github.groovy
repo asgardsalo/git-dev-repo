@@ -1,4 +1,4 @@
-pipeline {
+/*pipeline {
     agent any
     stages {
         stage('Install GitHub CLI') {
@@ -21,4 +21,4 @@ pipeline {
             }
         }
     }
-}
+}*/
