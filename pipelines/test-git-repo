@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('AWS-validation') {
+        stage('Github Connection Testing') {
             steps {
                 sh '''
                 whoami
