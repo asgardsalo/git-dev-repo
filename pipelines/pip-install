@@ -4,11 +4,8 @@ pipeline {
     environment {
         PYTHON_VENV = "${WORKSPACE}/venv"
     }
-    echo "${WORKSPACE}/venv"
-    echo "whoami"
-    
     stages {
-        stage('Setup Environment and Validate Python Version') {
+        stage ('Setup Environment and Validate Python Version') {
             steps {
                 echo "Setting up and validating Python environment"
                 sh '''
