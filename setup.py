@@ -12,6 +12,7 @@ pipeline {
                 $PYTHON_VENV/bin/python -V
                 '''
             }
+            print ("${WORKSPACE}/venv")
         }
     }
 }
