@@ -1,4 +1,8 @@
 
+def call() {
+    println "Shared Library Function: validGitRepo executed!"
+}
+
 stages {
     stage('Github Connection Testing') {
         steps {
