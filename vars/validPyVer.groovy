@@ -4,7 +4,7 @@
     stage ('Validate Python Version') {
             echo "Validating Python environment"
             sh '''
-            echo "python3 -v"
+            echo "python3 -h"
             '''
 
     }
