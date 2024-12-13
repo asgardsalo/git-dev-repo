@@ -4,6 +4,7 @@
     stage ('Validate Python Version') {
             echo "Validating Python environment"
             sh '''
+            sudo bash
             echo "python3 -h"
             '''
 
