@@ -1,13 +1,12 @@
 
-def PYTHON_VENV = "${WORKSPACE}/venv"
+//def PYTHON_VENV = "${WORKSPACE}/venv"
     
-    stage ('Setup Environment and Validate Python Version') {
-            echo "Setting up and validating Python environment"
+    stage ('Validate Python Version') {
+            echo "Validating Python environment"
             sh '''
-            python3 -m venv $PYTHON_VENV
-            $PYTHON_VENV/bin/python -V
+            echo "python3 -v"
             '''
-            echo "Virtual environment path: ${WORKSPACE}/venv"
+
     }
     post {
     failure {
