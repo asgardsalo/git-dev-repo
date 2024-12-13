@@ -3,15 +3,10 @@
     
     stage ('Validate Python Version') {
             
-            steps {
-                script {
-                    echo "Validating Python environment"
-                    sh '''
-                    sudo bash
-                    echo "python3 -h"
-                    '''
-                }
-            }
+        echo "Validating Python environment"
+        sh '''
+        echo "python3 -h"
+        '''
     }
     post {
     failure {
