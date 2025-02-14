@@ -1,21 +1,20 @@
 provider "aws" {
-  region = "us-east-1" # Replace with your preferred region
+  region = var.region
 }
 
 resource "aws_vpc" "main_vpc" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block = var.vpc_id
 }
 
 resource "aws_subnet" "main_subnet" {
-  vpc_id     = aws_vpc.main_vpc.id
-  cidr_block = "10.0.1.0/24"
+  vpc_id     = var_subnet_id
 }
 
 resource "aws_internet_gateway" "main_igw" {
-  vpc_id = aws_vpc.main_vpc.id
+  vpc_id = var.igw_id
 }
 
-resource "aws_security_group" "allow_all" {
+//resource "aws_security_group" "allow_all" {
   name        = "allow_all"
   description = "Allow all inbound and outbound traffic"
   vpc_id      = aws_vpc.main_vpc.id
@@ -42,7 +41,7 @@ resource "aws_instance" "k8s_node" {
   subnet_id              = aws_subnet.main_subnet.id
   security_groups        = [aws_security_group.allow_all.name]
   associate_public_ip_address = true
-
+//
   user_data = <<-EOF
     #!/bin/bash
     yum update -y
