@@ -3,8 +3,6 @@ def call() {
     
     stage('Github Connection Testing') {
         sh '''
-        whoami
-        sudo -S bash
         curl https://api.github.com/repos/asgardsalo/git-dev-repo
         '''
     }
