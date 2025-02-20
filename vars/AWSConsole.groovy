@@ -6,7 +6,7 @@ def call() {
         
         stage ("testing_aws") {
             Baseurl="https://awssalo.signin.aws.amazon.com/console"
-            withCredentials('jenkins-aws')
+           // withCredentials('jenkins-aws')
             sh '''
             aws ec2 describe-vpcs --output table
             aws ec2 describe-instances --output table
