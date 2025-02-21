@@ -2,14 +2,14 @@ package com.salo_utilities.utils
 import groovy.json.JsonOutput
 
 
-//---------Buckets------
+//---------Buckets------//
 
 void uploadToBucket(String bucket, String filenameID) {
     String cmd = "aws s3 cp ${filenameID} s3://${bucket}/${filenameID}" 
     String response = sh(script:cmd, returnStdout:true)
     print(response)
 }
-//----Download from Bucket
+//----Download from Bucket------//
 
 void downloadFromBucket(String bucket, String filenameID) {
     String cmd = "aws s3 cp s3://${bucket}/${filenameID} ${filenameID}" 
@@ -17,12 +17,18 @@ void downloadFromBucket(String bucket, String filenameID) {
     print(response)
 }
 
-//---Delete files:
+//---Delete files------//
 
-void downloadFromBucket(String bucket, String filenameID) {
+void deleteFromBucket(String bucket, String filenameID) {
     String cmd = "aws s3 rm s3://${bucket}/${filenameID}" 
     String response = sh(script:cmd, returnStdout:true)
     print(response)
 }
 
+//---Download Speed------//
 
+void downloadFromBucket(String bucket, String filenameID) {
+    String cmd = "aws configure set default.s3.max_concurrent_request 10" 
+    String response = sh(script:cmd, returnStdout:true)
+    print(response)
+}
