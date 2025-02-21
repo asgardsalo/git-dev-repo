@@ -1,4 +1,4 @@
-def call() {
+/*def call() {
     //export PATH="/usr/local/google-cloud-sdk/bin:$PATH"
     String jenkins_agent = ""
 
@@ -14,3 +14,4 @@ def call() {
     }
     
 }
+*/
