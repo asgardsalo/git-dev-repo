@@ -4,7 +4,7 @@ def call() {
 
     node(jenkins_agent) {
         
-        stage ("testing_aws") {
+        stage ("testing_gcp") {
            //Baseurl="https://awssalo.signin.aws.amazon.com/console"
             /*sh '''
             
