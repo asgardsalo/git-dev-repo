@@ -1,5 +1,5 @@
 def call() {
-
+    //export PATH="/usr/local/google-cloud-sdk/bin:$PATH"
     String jenkins_agent = ""
 
     node(jenkins_agent) {
@@ -7,7 +7,7 @@ def call() {
         stage ("testing_aws") {
            //Baseurl="https://awssalo.signin.aws.amazon.com/console"
             sh '''
-            export PATH="/usr/local/google-cloud-sdk/bin:$PATH"
+            
             gcloud config list
             '''
         }
