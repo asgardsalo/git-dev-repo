@@ -1,7 +1,4 @@
 def call() {
-String gcloudpath='export PATH="/usr/local/google-cloud-sdk/bin:$PATH"'
-//gcloud config list
-String awspath=""
 
     String jenkins_agent = ""
 
@@ -14,7 +11,7 @@ String awspath=""
             
             aws ec2 describe-vpcs --output table
             aws ec2 describe-instances --output table
-            aws s3 
+            aws s3 ls
             aws iam list-users --output table
             '''
         }
