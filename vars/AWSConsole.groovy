@@ -15,7 +15,7 @@ String awspath=""
             aws ec2 describe-vpcs --output table
             aws ec2 describe-instances --output table
             aws s3 ls
-            aws s3api create-bucket --bucketmy-aws-jenkins-salo-bucket --region us-east-1
+            aws s3api create-bucket --bucket my-aws-jenkins-salo-bucket --region us-east-1
             aws iam list-users --output table
             '''
         }
