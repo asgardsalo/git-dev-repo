@@ -1,5 +1,5 @@
 def call() {
-//String gcloudpath="def gcloudpath= export PATH="/usr/local/google-cloud-sdk/bin:$PATH""
+String gcloudpath='export PATH="/usr/local/google-cloud-sdk/bin:$PATH"'
 //gcloud config list
 String awspath=""
 
@@ -15,7 +15,6 @@ String awspath=""
             aws ec2 describe-vpcs --output table
             aws ec2 describe-instances --output table
             aws s3 ls
-            aws s3api create-bucket --bucket my-aws-jenkins-salo-bucket --region us-east-1
             aws iam list-users --output table
             '''
         }
