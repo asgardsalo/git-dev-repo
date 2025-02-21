@@ -10,7 +10,7 @@ def call() {
             
             gcloud config list
             '''*/
-            print("/usr/local/google-cloud-sdk/bin:$PATH")
+            print("$PATH")
         }
     }
     
