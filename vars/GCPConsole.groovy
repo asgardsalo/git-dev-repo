@@ -8,9 +8,9 @@ def call() {
            //Baseurl="https://awssalo.signin.aws.amazon.com/console"
             sh '''
             export PATH="/usr/local/google-cloud-sdk/bin:$PATH"
-            gcloud config list
             '''
             print("$PATH")
+            print(sh(script:"gcloud config list", redturnStatus:true, returnStdout: true))
         }
     }
     
