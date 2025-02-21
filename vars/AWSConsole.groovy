@@ -1,6 +1,6 @@
 def call() {
 String gcloudpath="export PATH=$PATH:/usr/local/bin"
-String awspath="export PATH="/usr/local/google-cloud-sdk/bin:$PATH""
+String awspath="export PATH='/usr/local/google-cloud-sdk/bin:$PATH'"
 /*
 gcloudpath='export PATH=$PATH:/usr/local/bin'
             awspath='export PATH="/usr/local/google-cloud-sdk/bin:$PATH"'
