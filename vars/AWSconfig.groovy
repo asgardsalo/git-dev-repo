@@ -33,7 +33,9 @@
             region= 'sa-east-1'
         break
     }
-    sh 'export PATH=$PATH:/usr/local/bin'
+    sh '''
+        export PATH=$PATH:/usr/local/bin'
+    '''
     sh "aws configure set region ${region}"
     echo $AWS_DEFAULT_REGION
  }
