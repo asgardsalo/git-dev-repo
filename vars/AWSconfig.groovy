@@ -45,9 +45,9 @@ def regiSel=""
         '''
     }
     stage("aws_configure") {
-        echo PATH
+        echo "PATH: ${env.PATH}"
+        echo "Region selected: ${regiSel}"
         //sh "aws configure set region ${region}"
-        echo regiSel
         }
     }
     
