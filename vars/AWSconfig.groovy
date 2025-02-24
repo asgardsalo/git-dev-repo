@@ -33,7 +33,7 @@
             region= 'sa-east-1'
         break
     }
-    print(${region})
+    print(region)
 
        /* sh '''
         export PATH=$PATH:/usr/local/bin'
