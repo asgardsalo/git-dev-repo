@@ -42,6 +42,6 @@
         echo $AWS_DEFAULT_REGION
         }
     */
-
+ }
     
     
