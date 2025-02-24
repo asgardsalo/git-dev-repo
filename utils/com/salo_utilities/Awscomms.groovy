@@ -32,3 +32,12 @@ void downloadFromBucket(String bucket, String filenameID) {
     String response = sh(script:cmd, returnStdout:true)
     print(response)
 }
+
+
+//---AWS Configuration------//
+
+void downloadFromBucket(String region) {
+    String cmd = "aws configure set region ${region}" 
+    String response = sh(script:cmd, returnStdout:true)
+    print(response)
+}
