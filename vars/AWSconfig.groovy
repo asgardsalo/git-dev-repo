@@ -33,10 +33,13 @@
             region= 'sa-east-1'
         break
     }
-    sh '''
+    node (jenkins_agent) {
+        sh '''
         export PATH=$PATH:/usr/local/bin'
-    '''
-    sh "aws configure set region ${region}"
-    echo $AWS_DEFAULT_REGION
- }
+        '''
+        sh "aws configure set region ${region}"
+        echo $AWS_DEFAULT_REGION
+        }
+    }
+    
     
