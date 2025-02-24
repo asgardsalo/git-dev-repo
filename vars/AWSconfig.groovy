@@ -1,5 +1,5 @@
 //import utils.Awscomms
- 
+ def call (String availabilityzone) {
     switch(availabilityzone) {
         case 'N. Virginia' :
             region= 'us-east-1'
@@ -35,3 +35,5 @@
     }
     sh "aws configure set region ${region}"
     echo $AWS_DEFAULT_REGION
+ }
+    
