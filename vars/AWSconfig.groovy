@@ -35,13 +35,16 @@
     }
     print(region)
 
-       /* sh '''
-        export PATH=$PATH:/usr/local/bin'
+    stage ("exportpath") {
+        Baseurl="https://awssalo.signin.aws.amazon.com/console"
+        sh '''
+            export PATH=$PATH:/usr/local/bin
         '''
+    }
+    stage("aws_configure") {
         sh "aws configure set region ${region}"
         echo $AWS_DEFAULT_REGION
         }
-    */
- }
+    }
     
     
