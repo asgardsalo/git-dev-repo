@@ -1,5 +1,6 @@
 //import utils.Awscomms
 
+def regiSel = ""
  def call (String availabilityzone, String regiSel) {
     switch(availabilityzone) {
         case 'N.Virginia' :
