@@ -42,7 +42,7 @@
         '''
     }
     stage("aws_configure") {
-        echo ${PATH}
+        echo PATH
         //sh "aws configure set region ${region}"
         echo $AWS_DEFAULT_REGION
         }
