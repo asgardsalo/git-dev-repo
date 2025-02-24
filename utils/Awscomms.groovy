@@ -1,6 +1,5 @@
-package com.salo_utilities.utils
+package utils
 import groovy.json.JsonOutput
-
 
 //---------Buckets------//
 
