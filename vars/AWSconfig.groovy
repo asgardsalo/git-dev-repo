@@ -1,11 +1,11 @@
 //import utils.Awscomms
  def call (String availabilityzone) {
     switch(availabilityzone) {
-        case 'N. Virginia' :
+        case 'N.Virginia' :
             region= 'us-east-1'
         case 'Ohio' :
             region= 'us-east-2'
-        case 'N. Carolina' :
+        case 'N.Carolina' :
             region= 'us-west-1'
         case 'Oregon' :
             region= 'us-west-2'
