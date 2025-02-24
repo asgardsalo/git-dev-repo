@@ -1,5 +1,5 @@
 import utils.Awscomms
- def call(String region)
+ def call()
  
         switch(availabilityzone) {
             case 'N. Virginia' :
