@@ -1,5 +1,4 @@
 //import utils.Awscomms
-  String jenkins_agent = ""
  def call (String availabilityzone) {
     switch(availabilityzone) {
         case 'N. Virginia' :
@@ -34,13 +33,15 @@
             region= 'sa-east-1'
         break
     }
-    node (jenkins_agent) {
-        sh '''
+    print(${region})
+
+       /* sh '''
         export PATH=$PATH:/usr/local/bin'
         '''
         sh "aws configure set region ${region}"
         echo $AWS_DEFAULT_REGION
         }
-    }
+    */
+
     
     
