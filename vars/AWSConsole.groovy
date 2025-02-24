@@ -1,5 +1,3 @@
-import com.utils.salo_utilities.Awscomms
-
 def call() {
 
     String jenkins_agent = ""
