@@ -1,4 +1,4 @@
-import utils.Awscomms
+//import utils.Awscomms
  
         switch(availabilityzone) {
             case 'N. Virginia' :
