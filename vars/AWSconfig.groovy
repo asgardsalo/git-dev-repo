@@ -33,5 +33,5 @@
             region= 'sa-east-1'
         break
     }
-    sh 'aws configure set region ${region}'
+    sh "aws configure set region ${region}"
     echo $AWS_DEFAULT_REGION
