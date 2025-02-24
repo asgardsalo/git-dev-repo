@@ -1,4 +1,5 @@
 //import utils.Awscomms
+  String jenkins_agent = ""
  def call (String availabilityzone) {
     switch(availabilityzone) {
         case 'N. Virginia' :
