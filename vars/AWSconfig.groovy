@@ -1,34 +1,16 @@
-pipeline {
-    agent any
-    
-    parameters {
-        string(name: 'availabilityzone', defaultValue: '', description: 'Enter the availability zone')
-    }
-    
-    stages {
-        stage('Parameters validation') {
+#!groovy 
+ 
+ stage('Select AWS Region') {
             steps {
                 script {
-                    if (!params.availabilityzone) {
-                        error("Invalid availability zone")
-                    } else {
-                        echo "Availability Zone Selected: ${params.availabilityzone}"
-                    }
-                }
-            }
-        }
-        
-        stage('Select AWS Region') {
-            steps {
-                script {
-                    switch(params.availabilityzone) {
-                        case 'N.Virginia':
-                            regiSel = 'us-east-1'
-                            break
+                    switch (params.region) {
+                        case 'N. Virginia':
+                            regiSel='us-east-1'
+                        break
                         case 'Ohio':
-                            regiSel = 'us-east-2'
-                            break
-                        case 'N.Carolina':
+                            regiSel='us-east-2'
+                        break
+                        case 'N. Carolina':
                             regiSel = 'us-west-1'
                             break
                         case 'Oregon':
@@ -59,9 +41,9 @@ pipeline {
                             regiSel = 'sa-east-1'
                             break
                         default:
-                            error("Invalid availability zone")
+                            echo "Region not recognized: ${params.region}"
+                            error("Invalid region specified.")
                     }
-                    echo "Region selected: ${regiSel}"
                 }
             }
         }
@@ -69,28 +51,8 @@ pipeline {
         stage('Export Path') {
             steps {
                 script {
-                    Baseurl = "https://awssalo.signin.aws.amazon.com/console"
-                    sh '''
-                        export PATH=$PATH:/usr/local/bin
-                    '''
+                    sh "/usr/local/bin/aws configure set region ${regiSel}"
+                    sh "/usr/local/bin/aws configure list"
                 }
             }
         }
-        
-        stage('AWS Configure') {
-            steps {
-                script {
-                    echo "PATH: ${env.PATH}"
-                    echo "Region selected: ${regiSel}"
-                    sh "aws configure set region ${regiSel}"
-                }
-            }
-        }
-    }
-    
-    post {
-        always {
-            cleanWs()
-        }
-    }
-}
