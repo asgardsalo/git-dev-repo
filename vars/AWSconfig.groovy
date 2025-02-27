@@ -2,8 +2,6 @@
 
 def call (String regiSel) {
 
-String regiSel = ""
-
     stage('Export Path') {
         steps {
             script {
