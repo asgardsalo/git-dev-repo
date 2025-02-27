@@ -10,11 +10,5 @@ def call (String regiSel) {
             }
         //}
     //}
-    
-    post {
-        always {
-        cleanWs()
-        }
-    }
 }
 
