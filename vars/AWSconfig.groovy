@@ -1,6 +1,10 @@
 #!groovy 
-    String regiSel = ""
 
+def call () {
+String regiSel = ""
+ String jenkins_agent = ""
+
+    node(jenkins_agent) {
 
         stage('Export Path') {
             steps {
@@ -11,8 +15,10 @@
             }
         }
     
-    post {
-        always {
-        cleanWs()
+        post {
+            always {
+            cleanWs()
+            }
         }
     }
+}
