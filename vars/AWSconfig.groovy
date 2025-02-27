@@ -3,8 +3,8 @@
 def call (String regiSel) {
 
     stage('Select AWS Region') {
-        steps {
-            script {
+        //steps {
+            //script {
                 switch (params.region) {
                     case 'N. Virginia':
                         regiSel='us-east-1'
@@ -46,17 +46,17 @@ def call (String regiSel) {
                         echo "Region not recognized: ${params.region}"
                         error("Invalid region specified.")
                 }
-            }
-        }
+            //}
+        //}
     }
 
     stage('Export Path') {
-        steps {
-            scirpt {
+        //steps {
+        //    scirpt {
                 sh "/usr/local/bin/aws configure set region ${regiSel}"
                 sh "/usr/local/bin/aws configure list"
             }
-        }
-    }
+        //}
+    //}
 }
 
