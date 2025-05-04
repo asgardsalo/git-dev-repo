@@ -1,0 +1,6 @@
+#AWS CLI
+export PATH=$PATH:/usr/local/bin
+#GCLOUD CLI
+export PATH=$PATH:/usr/local/bin
+#AZURE CLI
+export PATH=$PATH:/usr/local/bin
