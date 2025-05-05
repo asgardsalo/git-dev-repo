@@ -1,4 +1,6 @@
 #!groovy 
+import resources.templates.services.base-paths
+
 
 def call (String regiSel) {
 
@@ -48,8 +50,8 @@ def call (String regiSel) {
     }
 
     stage('Export Path') {
-        sh "/usr/local/bin/aws configure set region ${regiSel}"
-        sh "/usr/local/bin/aws configure list"
+        sh "aws configure set region ${regiSel}"
+        sh "aws configure list"
     }
 }
 
