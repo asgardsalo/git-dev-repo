@@ -1,4 +1,4 @@
-import base_paths
+
 def call() {
 
     String jenkins_agent = ""
