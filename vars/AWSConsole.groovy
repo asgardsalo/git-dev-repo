@@ -1,5 +1,5 @@
-//import resources.templates.services.basePaths
-import resources.templates.services.basePaths as basePaths
+def basePaths = load 'resources.templates.services.basePaths'
+
 
 def call() {
 
