@@ -1,3 +1,4 @@
+// Groovy script to interact with GCP Console
 import resources.templates.services.base-paths
 
 def call() {
