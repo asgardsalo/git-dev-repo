@@ -1,8 +1,5 @@
-#!groovy 
-import resources.templates.services.base-paths
-
-=======
->>>>>>> parent of 4a49354 (changes in awsconfig file)
+import utils.base-paths
+//import utils.base_paths
 
 def call (String regiSel) {
 
