@@ -1,4 +1,4 @@
-import resources/templates/services/basePaths
+import resources.templates.services.basePaths
 
 
 def call() {
