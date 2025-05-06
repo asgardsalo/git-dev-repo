@@ -1,6 +1,5 @@
 #!groovy 
-<<<<<<< HEAD
-import base_paths
+import resources.templates.services.base-paths
 
 =======
 >>>>>>> parent of 4a49354 (changes in awsconfig file)
