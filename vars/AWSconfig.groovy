@@ -1,6 +1,9 @@
 #!groovy 
-import resources.templates.services.base-paths
+<<<<<<< HEAD
+import base_paths
 
+=======
+>>>>>>> parent of 4a49354 (changes in awsconfig file)
 
 def call (String regiSel) {
 
@@ -50,8 +53,8 @@ def call (String regiSel) {
     }
 
     stage('Export Path') {
-        sh "aws configure set region ${regiSel}"
-        sh "aws configure list"
+        sh "/usr/local/bin/aws configure set region ${regiSel}"
+        sh "/usr/local/bin/aws configure list"
     }
 }
 
