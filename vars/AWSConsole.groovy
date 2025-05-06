@@ -1,12 +1,9 @@
-def basePaths = load 'resources.templates.services.basePaths'
-
-
 def call() {
 
     String jenkins_agent = ""
 
     node(jenkins_agent) {
-        
+        def basePaths = load 'resources.templates.services.basePaths'
         stage ("testing_aws") {
             sh '''
             aws ec2 describe-vpcs --output table
