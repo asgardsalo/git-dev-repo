@@ -1,6 +1,5 @@
-#!groovy
-import resources.templates.services.basePaths
-//import resources.templates.services.basePaths as basePaths
+//import resources.templates.services.basePaths
+import resources.templates.services.basePaths as basePaths
 
 def call() {
 
