@@ -1,3 +1,5 @@
+import resources.templates.services.basePaths
+//import resources.templates.services.basePaths as basePaths
 
 def call() {
 
@@ -7,8 +9,6 @@ def call() {
         
         stage ("testing_aws") {
             sh '''
-            export PATH=$PATH:/usr/local/bin
-            echo $PATH
             aws ec2 describe-vpcs --output table
             aws ec2 describe-instances --output table
             aws s3 ls
