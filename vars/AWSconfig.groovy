@@ -1,7 +1,3 @@
-#!groovy
-
-//import rscs.templates.services.basepaths
-
 def call (String regiSel) {
 
     stage('Select AWS Region') {
@@ -50,10 +46,13 @@ def call (String regiSel) {
     }
 
     stage('Export Path') {
-        sh "/usr/local/bin/aws configure set region ${regiSel}"
-        sh "/usr/local/bin/aws configure list"
-        sh "/usr/local/bin/aws configure set region ${regiSel}"
-        sh "/usr/local/bin/aws configure list"
+        sh '''
+            export PATH=$PATH:/usr/local/bin
+            aws configure set region ${regiSel}"
+            aws configure list"
+            aws configure set region ${regiSel}"
+            aws configure list"
+        '''
     }
 }
 
