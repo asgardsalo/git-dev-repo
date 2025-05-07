@@ -1,6 +1,6 @@
 #!groovy
 
-//import resources.templates.services.base-paths
+//import rscs.templates.services.base-paths
 
 def call (String regiSel) {
 
