@@ -1,3 +1,5 @@
+#!groovy
+
 import resources.templates.services
 
 
