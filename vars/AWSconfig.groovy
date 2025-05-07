@@ -45,9 +45,10 @@ def call (String regiSel) {
         }
     }
 
-    stage('Export Path') {
-        sh "/usr/local/bin/aws configure set region ${regiSel}"
-        sh "/usr/local/bin/aws configure list"
+    stage('Change Region') {
+        sh "export PATH=$PATH:/usr/local/bin"
+        sh "PATH/aws configure set region ${regiSel}"
+        sh "PATH/aws configure list"
     }
 }
 
