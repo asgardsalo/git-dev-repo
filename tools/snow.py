@@ -1,5 +1,3 @@
-import requests
-import json
 
 # ServiceNow credentials and endpoint (update with your instance details)
 SERVICE_NOW_URL = "https://your_instance.service-now.com/api/now/table/incident"
