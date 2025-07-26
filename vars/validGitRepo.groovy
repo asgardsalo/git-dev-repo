@@ -3,8 +3,11 @@ def call() {
     
     stage('Github Connection Testing') {
         sh '''
-        //curl https://api.github.com/repos/asgardsalo/git-dev-repo
-        curl -s -u https://api.github.com/user/repos?per_page=100 | grep '"full_name"' | cut -d '"' -f 4
+        curl https://api.github.com/repos/asgardsalo/git-dev-repo
+        curl https://api.github.com/repos/asgardsalo/web-app
+        curl https://api.github.com/repos/asgardsalo/git-aws-jenkins
+        curl https://api.github.com/repos/asgardsalo/azure-git-repo
+        curl https://api.github.com/repos/asgardsalo/bruno_collections
         '''
     }
     println "Shared Library Function: validGitRepo executed!"
