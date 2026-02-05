@@ -1,0 +1,11 @@
+pipeline {
+    agent any
+    stages {
+        stage('Validate Terraform Version') {
+            steps {
+                validTfVer() 
+            }
+        }
+    }
+}
+
